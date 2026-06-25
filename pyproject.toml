@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gesturescope-mvp"
+version = "0.1.0"
+description = "A classroom-ready multi-hand gesture recognition and reporting MVP."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "opencv-python>=4.8.0",
+  "mediapipe>=0.10.8",
+  "numpy>=1.24.0",
+  "pandas>=2.0.0",
+]
+
+[project.scripts]
+gesturescope-realtime = "gesturescope.realtime_app:main"
+gesturescope-video = "gesturescope.video_file_app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
